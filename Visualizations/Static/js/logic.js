@@ -65,9 +65,7 @@ L.control.layers(baseMaps, overlays).addTo(map);
 // Retrieve the location GeoJSON data.
 d3.json("Visualizations/Data/map.geojson").then(function(data) {
 
-  // Left this in because wasn't working when deleted but commented out parts not needed for markers, just circleMarkers
-  // We passed the magnitude of the earthquake into two separate functions
-  // to calculate the color and radius (I was to delete the radius one).
+  // lculate the color and radius (I was to delete the radius one).
   function styleInfo(feature) {
     return {
       //opacity: 1,
