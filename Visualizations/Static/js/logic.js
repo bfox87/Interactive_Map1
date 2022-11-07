@@ -382,7 +382,7 @@ d3.json("Visualizations/Data/map.geojson").then(function(data) {
 
       var text = L.DomUtil.create('div');
       text.id = "info_text";
-      text.innerHTML = "<strong>1962-1973 USAF Combat-Related Losses in Vietnam War</strong>"
+      text.innerHTML = "<strong>USAF Combat-Related Losses in the Vietnam War from 1962-1973</strong>"
       return text;
     }
   });
