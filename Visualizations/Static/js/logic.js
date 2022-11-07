@@ -97,9 +97,9 @@ d3.json("Visualizations/Data/map.geojson").then(function(data) {
   // We turn each feature into a Marker on the map.
   pointToLayer: function(feature, latlng) {
     console.log(data);
-    if (feature.properties.Pilot_Status == "KIA" && feature.properties.Crash_Date.slice(0,4) == "1962") {
+    if ((feature.properties.Pilot_Status == "KIA" || feature.properties.Pilot_Status == "MIA") && feature.properties.Crash_Date.slice(0,4) == "1962") {
       return L.marker(latlng, {icon: kiaMarker});
-    } else if (feature.properties.Pilot_Status != "KIA" && feature.properties.Crash_Date.slice(0,4) == "1962") {
+    } else if ((feature.properties.Pilot_Status != "KIA" || feature.properties.Pilot_Status != "MIA") && feature.properties.Crash_Date.slice(0,4) == "1962") {
         return L.marker(latlng, {icon: surviveMarker});
     } else {
         return false;
@@ -107,7 +107,8 @@ d3.json("Visualizations/Data/map.geojson").then(function(data) {
   },
   // A popup for each marker to display info about the crash.
   onEachFeature: function(feature, layer) {
-    layer.bindPopup("Crash Date: " + feature.properties.Crash_Date + "<br>Pilot Status: " + feature.properties.Pilot_Status + "<br>Pilot: " + feature.properties.Pilot + "<br>Cause: " + feature.properties.Defense_Category + "<br>Plane: " + feature.properties.Summarized_Name + "<br>" + feature.properties.Image_Link);
+    layer.bindPopup("Crash Date: " + feature.properties.Crash_Date + "<br>Pilot Status: " + feature.properties.Pilot_Status + "<br>Pilot: " 
+    + feature.properties.Pilot + "<br>Cause: " + feature.properties.Defense_Category + "<br>Plane: " + feature.properties.Summarized_Name + "<br>" + feature.properties.Image_Link);
   }
  }).addTo(sixtyTwo);
  // Add 1962 crash layer to our map.
@@ -119,9 +120,9 @@ d3.json("Visualizations/Data/map.geojson").then(function(data) {
   // We turn each feature into a Marker on the map.
   pointToLayer: function(feature, latlng) {
     console.log(data);
-    if (feature.properties.Pilot_Status == "KIA" && feature.properties.Crash_Date.slice(0,4) == "1964") {
+    if ((feature.properties.Pilot_Status == "KIA" || feature.properties.Pilot_Status == "MIA") && feature.properties.Crash_Date.slice(0,4) == "1964") {
       return L.marker(latlng, {icon: kiaMarker});
-    } else if (feature.properties.Pilot_Status != "KIA" && feature.properties.Crash_Date.slice(0,4) == "1964") {
+    } else if ((feature.properties.Pilot_Status != "KIA" || feature.properties.Pilot_Status != "MIA") && feature.properties.Crash_Date.slice(0,4) == "1964") {
         return L.marker(latlng, {icon: surviveMarker});
     } else {
         return false;
@@ -129,7 +130,8 @@ d3.json("Visualizations/Data/map.geojson").then(function(data) {
   },
   // A popup for each marker to display info about the crash.
   onEachFeature: function(feature, layer) {
-    layer.bindPopup("Crash Date: " + feature.properties.Crash_Date + "<br>Pilot Status: " + feature.properties.Pilot_Status + "<br>Pilot: " + feature.properties.Pilot + "<br>Cause: " + feature.properties.Defense_Category + "<br>Plane: " + feature.properties.Summarized_Name + "<br>" + feature.properties.Image_Link);
+    layer.bindPopup("Crash Date: " + feature.properties.Crash_Date + "<br>Pilot Status: " + feature.properties.Pilot_Status + "<br>Pilot: " 
+    + feature.properties.Pilot + "<br>Cause: " + feature.properties.Defense_Category + "<br>Plane: " + feature.properties.Summarized_Name + "<br>" + feature.properties.Image_Link);
   }
  }).addTo(sixtyFour);
  // Add 1964 crash layer to our map.
@@ -141,9 +143,9 @@ d3.json("Visualizations/Data/map.geojson").then(function(data) {
   // We turn each feature into a Marker on the map.
   pointToLayer: function(feature, latlng) {
     console.log(data);
-    if (feature.properties.Pilot_Status == "KIA" && feature.properties.Crash_Date.slice(0,4) == "1965") {
+    if ((feature.properties.Pilot_Status == "KIA" || feature.properties.Pilot_Status == "MIA") && feature.properties.Crash_Date.slice(0,4) == "1965") {
       return L.marker(latlng, {icon: kiaMarker});
-    } else if (feature.properties.Pilot_Status != "KIA" && feature.properties.Crash_Date.slice(0,4) == "1965") {
+    } else if ((feature.properties.Pilot_Status != "KIA" || feature.properties.Pilot_Status != "MIA") && feature.properties.Crash_Date.slice(0,4) == "1965") {
         return L.marker(latlng, {icon: surviveMarker});
     } else {
         return false;
@@ -151,7 +153,8 @@ d3.json("Visualizations/Data/map.geojson").then(function(data) {
   },
   // A popup for each marker to display info about the crash.
   onEachFeature: function(feature, layer) {
-    layer.bindPopup("Crash Date: " + feature.properties.Crash_Date + "<br>Pilot Status: " + feature.properties.Pilot_Status + "<br>Pilot: " + feature.properties.Pilot + "<br>Cause: " + feature.properties.Defense_Category + "<br>Plane: " + feature.properties.Summarized_Name + "<br>" + feature.properties.Image_Link);
+    layer.bindPopup("Crash Date: " + feature.properties.Crash_Date + "<br>Pilot Status: " + feature.properties.Pilot_Status + "<br>Pilot: " 
+    + feature.properties.Pilot + "<br>Cause: " + feature.properties.Defense_Category + "<br>Plane: " + feature.properties.Summarized_Name + "<br>" + feature.properties.Image_Link);
   }
  }).addTo(sixtyFive);
  // Add 1965 crash layer to our map.
@@ -163,9 +166,9 @@ d3.json("Visualizations/Data/map.geojson").then(function(data) {
   // We turn each feature into a Marker on the map.
   pointToLayer: function(feature, latlng) {
     console.log(data);
-    if (feature.properties.Pilot_Status == "KIA" && feature.properties.Crash_Date.slice(0,4) == "1966") {
+    if ((feature.properties.Pilot_Status == "KIA" || feature.properties.Pilot_Status == "MIA") && feature.properties.Crash_Date.slice(0,4) == "1966") {
       return L.marker(latlng, {icon: kiaMarker});
-    } else if (feature.properties.Pilot_Status != "KIA" && feature.properties.Crash_Date.slice(0,4) == "1966") {
+    } else if ((feature.properties.Pilot_Status != "KIA" || feature.properties.Pilot_Status != "MIA") && feature.properties.Crash_Date.slice(0,4) == "1966") {
         return L.marker(latlng, {icon: surviveMarker});
     } else {
         return false;
@@ -173,7 +176,8 @@ d3.json("Visualizations/Data/map.geojson").then(function(data) {
   },
   // A popup for each marker to display info about the crash.
   onEachFeature: function(feature, layer) {
-    layer.bindPopup("Crash Date: " + feature.properties.Crash_Date + "<br>Pilot Status: " + feature.properties.Pilot_Status + "<br>Pilot: " + feature.properties.Pilot + "<br>Cause: " + feature.properties.Defense_Category + "<br>Plane: " + feature.properties.Summarized_Name + "<br>" + feature.properties.Image_Link);
+    layer.bindPopup("Crash Date: " + feature.properties.Crash_Date + "<br>Pilot Status: " + feature.properties.Pilot_Status + "<br>Pilot: " 
+    + feature.properties.Pilot + "<br>Cause: " + feature.properties.Defense_Category + "<br>Plane: " + feature.properties.Summarized_Name + "<br>" + feature.properties.Image_Link);
   }
  }).addTo(sixtySix);
  // Add 1966 crash layer to our map.
@@ -185,9 +189,9 @@ d3.json("Visualizations/Data/map.geojson").then(function(data) {
   // We turn each feature into a Marker on the map.
   pointToLayer: function(feature, latlng) {
     console.log(data);
-    if (feature.properties.Pilot_Status == "KIA" && feature.properties.Crash_Date.slice(0,4) == "1967") {
+    if ((feature.properties.Pilot_Status == "KIA" || feature.properties.Pilot_Status == "MIA") && feature.properties.Crash_Date.slice(0,4) == "1967") {
       return L.marker(latlng, {icon: kiaMarker});
-    } else if (feature.properties.Pilot_Status != "KIA" && feature.properties.Crash_Date.slice(0,4) == "1967") {
+    } else if ((feature.properties.Pilot_Status != "KIA" || feature.properties.Pilot_Status != "MIA") && feature.properties.Crash_Date.slice(0,4) == "1967") {
         return L.marker(latlng, {icon: surviveMarker});
     } else {
         return false;
@@ -195,7 +199,8 @@ d3.json("Visualizations/Data/map.geojson").then(function(data) {
   },
   // A popup for each marker to display info about the crash.
   onEachFeature: function(feature, layer) {
-    layer.bindPopup("Crash Date: " + feature.properties.Crash_Date + "<br>Pilot Status: " + feature.properties.Pilot_Status + "<br>Pilot: " + feature.properties.Pilot + "<br>Cause: " + feature.properties.Defense_Category + "<br>Plane: " + feature.properties.Summarized_Name + "<br>" + feature.properties.Image_Link);
+    layer.bindPopup("Crash Date: " + feature.properties.Crash_Date + "<br>Pilot Status: " + feature.properties.Pilot_Status + "<br>Pilot: " 
+    + feature.properties.Pilot + "<br>Cause: " + feature.properties.Defense_Category + "<br>Plane: " + feature.properties.Summarized_Name + "<br>" + feature.properties.Image_Link);
   }
  }).addTo(sixtySeven);
  // Add 1967 crash layer to our map.
@@ -207,9 +212,9 @@ d3.json("Visualizations/Data/map.geojson").then(function(data) {
   // We turn each feature into a Marker on the map.
   pointToLayer: function(feature, latlng) {
     console.log(data);
-    if (feature.properties.Pilot_Status == "KIA" && feature.properties.Crash_Date.slice(0,4) == "1968") {
+    if ((feature.properties.Pilot_Status == "KIA" || feature.properties.Pilot_Status == "MIA") && feature.properties.Crash_Date.slice(0,4) == "1968") {
       return L.marker(latlng, {icon: kiaMarker});
-    } else if (feature.properties.Pilot_Status != "KIA" && feature.properties.Crash_Date.slice(0,4) == "1968") {
+    } else if ((feature.properties.Pilot_Status != "KIA" || feature.properties.Pilot_Status != "MIA") && feature.properties.Crash_Date.slice(0,4) == "1968") {
         return L.marker(latlng, {icon: surviveMarker});
     } else {
         return false;
@@ -217,7 +222,8 @@ d3.json("Visualizations/Data/map.geojson").then(function(data) {
   },
   // A popup for each marker to display info about the crash.
   onEachFeature: function(feature, layer) {
-    layer.bindPopup("Crash Date: " + feature.properties.Crash_Date + "<br>Pilot Status: " + feature.properties.Pilot_Status + "<br>Pilot: " + feature.properties.Pilot + "<br>Cause: " + feature.properties.Defense_Category + "<br>Plane: " + feature.properties.Summarized_Name + "<br>" + feature.properties.Image_Link);
+    layer.bindPopup("Crash Date: " + feature.properties.Crash_Date + "<br>Pilot Status: " + feature.properties.Pilot_Status + "<br>Pilot: " 
+    + feature.properties.Pilot + "<br>Cause: " + feature.properties.Defense_Category + "<br>Plane: " + feature.properties.Summarized_Name + "<br>" + feature.properties.Image_Link);
   }
  }).addTo(sixtyEight);
  // Add 1968 crash layer to our map.
@@ -229,9 +235,9 @@ d3.json("Visualizations/Data/map.geojson").then(function(data) {
   // We turn each feature into a Marker on the map.
   pointToLayer: function(feature, latlng) {
     console.log(data);
-    if (feature.properties.Pilot_Status == "KIA" && feature.properties.Crash_Date.slice(0,4) == "1969") {
+    if ((feature.properties.Pilot_Status == "KIA" || feature.properties.Pilot_Status == "MIA") && feature.properties.Crash_Date.slice(0,4) == "1969") {
       return L.marker(latlng, {icon: kiaMarker});
-    } else if (feature.properties.Pilot_Status != "KIA" && feature.properties.Crash_Date.slice(0,4) == "1969") {
+    } else if ((feature.properties.Pilot_Status != "KIA" || feature.properties.Pilot_Status != "MIA") && feature.properties.Crash_Date.slice(0,4) == "1969") {
         return L.marker(latlng, {icon: surviveMarker});
     } else {
         return false;
@@ -239,7 +245,8 @@ d3.json("Visualizations/Data/map.geojson").then(function(data) {
   },
   // A popup for each marker to display info about the crash.
   onEachFeature: function(feature, layer) {
-    layer.bindPopup("Crash Date: " + feature.properties.Crash_Date + "<br>Pilot Status: " + feature.properties.Pilot_Status + "<br>Pilot: " + feature.properties.Pilot + "<br>Cause: " + feature.properties.Defense_Category + "<br>Plane: " + feature.properties.Summarized_Name + "<br>" + feature.properties.Image_Link);
+    layer.bindPopup("Crash Date: " + feature.properties.Crash_Date + "<br>Pilot Status: " + feature.properties.Pilot_Status + "<br>Pilot: " 
+    + feature.properties.Pilot + "<br>Cause: " + feature.properties.Defense_Category + "<br>Plane: " + feature.properties.Summarized_Name + "<br>" + feature.properties.Image_Link);
   }
  }).addTo(sixtyNine);
  // Add 1969 crash layer to our map.
@@ -251,9 +258,9 @@ d3.json("Visualizations/Data/map.geojson").then(function(data) {
   // We turn each feature into a Marker on the map.
   pointToLayer: function(feature, latlng) {
     console.log(data);
-    if (feature.properties.Pilot_Status == "KIA" && feature.properties.Crash_Date.slice(0,4) == "1970") {
+    if ((feature.properties.Pilot_Status == "KIA" || feature.properties.Pilot_Status == "MIA") && feature.properties.Crash_Date.slice(0,4) == "1970") {
       return L.marker(latlng, {icon: kiaMarker});
-    } else if (feature.properties.Pilot_Status != "KIA" && feature.properties.Crash_Date.slice(0,4) == "1970") {
+    } else if ((feature.properties.Pilot_Status != "KIA" || feature.properties.Pilot_Status != "MIA") && feature.properties.Crash_Date.slice(0,4) == "1970") {
         return L.marker(latlng, {icon: surviveMarker});
     } else {
         return false;
@@ -261,7 +268,8 @@ d3.json("Visualizations/Data/map.geojson").then(function(data) {
   },
   // A popup for each marker to display info about the crash.
   onEachFeature: function(feature, layer) {
-    layer.bindPopup("Crash Date: " + feature.properties.Crash_Date + "<br>Pilot Status: " + feature.properties.Pilot_Status + "<br>Pilot: " + feature.properties.Pilot + "<br>Cause: " + feature.properties.Defense_Category + "<br>Plane: " + feature.properties.Summarized_Name + "<br>" + feature.properties.Image_Link);
+    layer.bindPopup("Crash Date: " + feature.properties.Crash_Date + "<br>Pilot Status: " + feature.properties.Pilot_Status + "<br>Pilot: " 
+    + feature.properties.Pilot + "<br>Cause: " + feature.properties.Defense_Category + "<br>Plane: " + feature.properties.Summarized_Name + "<br>" + feature.properties.Image_Link);
   }
  }).addTo(seventy);
  // Add 1970 crash layer to our map.
@@ -273,9 +281,9 @@ d3.json("Visualizations/Data/map.geojson").then(function(data) {
   // We turn each feature into a Marker on the map.
   pointToLayer: function(feature, latlng) {
     console.log(data);
-    if (feature.properties.Pilot_Status == "KIA" && feature.properties.Crash_Date.slice(0,4) == "1971") {
+    if ((feature.properties.Pilot_Status == "KIA" || feature.properties.Pilot_Status == "MIA") && feature.properties.Crash_Date.slice(0,4) == "1971") {
       return L.marker(latlng, {icon: kiaMarker});
-    } else if (feature.properties.Pilot_Status != "KIA" && feature.properties.Crash_Date.slice(0,4) == "1971") {
+    } else if ((feature.properties.Pilot_Status != "KIA" || feature.properties.Pilot_Status != "MIA") && feature.properties.Crash_Date.slice(0,4) == "1971") {
         return L.marker(latlng, {icon: surviveMarker});
     } else {
         return false;
@@ -283,7 +291,8 @@ d3.json("Visualizations/Data/map.geojson").then(function(data) {
   },
   // A popup for each marker to display info about the crash.
   onEachFeature: function(feature, layer) {
-    layer.bindPopup("Crash Date: " + feature.properties.Crash_Date + "<br>Pilot Status: " + feature.properties.Pilot_Status + "<br>Pilot: " + feature.properties.Pilot + "<br>Cause: " + feature.properties.Defense_Category + "<br>Plane: " + feature.properties.Summarized_Name + "<br>" + feature.properties.Image_Link);
+    layer.bindPopup("Crash Date: " + feature.properties.Crash_Date + "<br>Pilot Status: " + feature.properties.Pilot_Status + "<br>Pilot: " 
+    + feature.properties.Pilot + "<br>Cause: " + feature.properties.Defense_Category + "<br>Plane: " + feature.properties.Summarized_Name + "<br>" + feature.properties.Image_Link);
   }
  }).addTo(seventyOne);
  // Add 1971 crash layer to our map.
@@ -295,9 +304,9 @@ d3.json("Visualizations/Data/map.geojson").then(function(data) {
   // We turn each feature into a Marker on the map.
   pointToLayer: function(feature, latlng) {
     console.log(data);
-    if (feature.properties.Pilot_Status == "KIA" && feature.properties.Crash_Date.slice(0,4) == "1972") {
+    if ((feature.properties.Pilot_Status == "KIA" || feature.properties.Pilot_Status == "MIA") && feature.properties.Crash_Date.slice(0,4) == "1972") {
       return L.marker(latlng, {icon: kiaMarker});
-    } else if (feature.properties.Pilot_Status != "KIA" && feature.properties.Crash_Date.slice(0,4) == "1972") {
+    } else if ((feature.properties.Pilot_Status != "KIA" || feature.properties.Pilot_Status != "MIA") && feature.properties.Crash_Date.slice(0,4) == "1972") {
         return L.marker(latlng, {icon: surviveMarker});
     } else {
         return false;
@@ -305,7 +314,8 @@ d3.json("Visualizations/Data/map.geojson").then(function(data) {
   },
   // A popup for each marker to display info about the crash.
   onEachFeature: function(feature, layer) {
-    layer.bindPopup("Crash Date: " + feature.properties.Crash_Date + "<br>Pilot Status: " + feature.properties.Pilot_Status + "<br>Pilot: " + feature.properties.Pilot + "<br>Cause: " + feature.properties.Defense_Category + "<br>Plane: " + feature.properties.Summarized_Name + "<br>" + feature.properties.Image_Link);
+    layer.bindPopup("Crash Date: " + feature.properties.Crash_Date + "<br>Pilot Status: " + feature.properties.Pilot_Status + "<br>Pilot: " 
+    + feature.properties.Pilot + "<br>Cause: " + feature.properties.Defense_Category + "<br>Plane: " + feature.properties.Summarized_Name + "<br>" + feature.properties.Image_Link);
   }
  }).addTo(seventyTwo);
  // Add 1972 crash layer to our map.
@@ -317,9 +327,9 @@ d3.json("Visualizations/Data/map.geojson").then(function(data) {
   // We turn each feature into a Marker on the map.
   pointToLayer: function(feature, latlng) {
     console.log(data);
-    if (feature.properties.Pilot_Status == "KIA" && feature.properties.Crash_Date.slice(0,4) == "1973") {
+    if ((feature.properties.Pilot_Status == "KIA" || feature.properties.Pilot_Status == "MIA") && feature.properties.Crash_Date.slice(0,4) == "1973") {
       return L.marker(latlng, {icon: kiaMarker});
-    } else if (feature.properties.Pilot_Status != "KIA" && feature.properties.Crash_Date.slice(0,4) == "1973") {
+    } else if ((feature.properties.Pilot_Status != "KIA" || feature.properties.Pilot_Status != "MIA") && feature.properties.Crash_Date.slice(0,4) == "1973") {
         return L.marker(latlng, {icon: surviveMarker});
     } else {
         return false;
@@ -327,7 +337,8 @@ d3.json("Visualizations/Data/map.geojson").then(function(data) {
   },
   // A popup for each marker to display info about the crash.
   onEachFeature: function(feature, layer) {
-    layer.bindPopup("Crash Date: " + feature.properties.Crash_Date + "<br>Pilot Status: " + feature.properties.Pilot_Status + "<br>Pilot: " + feature.properties.Pilot + "<br>Cause: " + feature.properties.Defense_Category + "<br>Plane: " + feature.properties.Summarized_Name + "<br>" + feature.properties.Image_Link);
+    layer.bindPopup("Crash Date: " + feature.properties.Crash_Date + "<br>Pilot Status: " + feature.properties.Pilot_Status + "<br>Pilot: " 
+    + feature.properties.Pilot + "<br>Cause: " + feature.properties.Defense_Category + "<br>Plane: " + feature.properties.Summarized_Name + "<br>" + feature.properties.Image_Link);
   }
  }).addTo(seventyThree);
  // Add 1973 crash layer to our map.
@@ -346,7 +357,7 @@ d3.json("Visualizations/Data/map.geojson").then(function(data) {
 
   div.innerHTML += '<b>Pilot Status</b><br>'
 
-  const statuses = ["KIA", "Survived"];
+  const statuses = ["KIA / MIA", "Survived"];
   const colors = [
     "#FF0000",
     "#0000FF"
@@ -363,5 +374,21 @@ d3.json("Visualizations/Data/map.geojson").then(function(data) {
 
   // Adding legend to the map.
   legend.addTo(map);
+ 
   
+  // Create textbox for map title
+  L.Control.textbox = L.Control.extend({
+    onAdd: function() {
+
+      var text = L.DomUtil.create('div');
+      text.id = "info_text";
+      text.innerHTML = "<strong>1962-1973 USAF Combat-Related Losses in Vietnam War</strong>"
+      return text;
+    }
+  });
+  // Will not work without this next line of code
+  L.control.textbox = function(opts) { return new L.Control.textbox(opts)};
+  // Adding textbox to map
+  L.control.textbox({ position: 'topleft' }).addTo(map);
+
 });
