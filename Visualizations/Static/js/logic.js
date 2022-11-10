@@ -358,8 +358,24 @@ d3.json("Visualizations/Data/map2.geojson").then(function(data) {
   // Adding legend to the map.
   legend.addTo(map);
  
+  // Adding second legend to stand in for the title.
+  let Tlegend = L.control({
+    position: "bottomright"
+  })
+  
+  // Then adding all the details for the second legend.
+    Tlegend.onAdd = function() {
+      let div = L.DomUtil.create("div", "info legend");
+
+      div.innerHTML += '<b>USAF Combat-Related Losses in the Vietnam War 1962-1973</b><br>';
+      return div;
+  };
+  // Adding second legend to the map.
+  Tlegend.addTo(map);
+  
+  
   // Creating textbox for map title
-  L.Control.textbox = L.Control.extend({
+  /*L.Control.textbox = L.Control.extend({
     onAdd: function() {
 
       var text = L.DomUtil.create('div');
@@ -371,6 +387,6 @@ d3.json("Visualizations/Data/map2.geojson").then(function(data) {
   // Will not work without this next line of code
   L.control.textbox = function(opts) { return new L.Control.textbox(opts)};
   // Adding textbox to map
-  L.control.textbox({ position: 'bottomright' }).addTo(map);
+  L.control.textbox({ position: 'bottomright' }).addTo(map)*/;
 
 });
