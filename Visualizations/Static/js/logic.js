@@ -1,14 +1,14 @@
 // Add console.log to check to see if our code is working.
 console.log("working");
 
-// We create the tile layer that will be the background of our map.
+// Creating the tile layer for map background.
 let light = L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/light-v10/tiles/{z}/{x}/{y}?access_token={accessToken}', {
 	attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery (c) <a href="https://www.mapbox.com/">Mapbox</a>',
 	maxZoom: 18,
 	accessToken: API_KEY
 });
 
-// We create the second tile layer that will be the background of our map.
+// Creating second tile layer other optional map background.
 let dark = L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/dark-v10/tiles/{z}/{x}/{y}?access_token={accessToken}', {
 	attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery (c) <a href="https://www.mapbox.com/">Mapbox</a>',
 	maxZoom: 18,
@@ -16,8 +16,7 @@ let dark = L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/dark-v10/tiles/{
 });
 
 
-// Adding a layer group for each year. No crashes in 1963.
-
+// Adding a layer group for each year. No coordinates for any crashes in 1963 so skipping.
 let sixtyTwo = new L.LayerGroup();
 let sixtyFour = new L.LayerGroup();
 let sixtyFive = new L.LayerGroup();
@@ -30,7 +29,7 @@ let seventyOne = new L.layerGroup();
 let seventyTwo = new L.layerGroup();
 let seventyThree = new L.layerGroup();
 
-// 2. Adding overlays.
+// Adding overlays.
 let overlays = {
   "1962": sixtyTwo,
   "1964": sixtyFour,
@@ -45,40 +44,26 @@ let overlays = {
   "1973": seventyThree
 };
 
-// Create the map object with center, zoom level and default layer.
+// Creating the map object with center, zoom level, and default layer.
 let map = L.map('mapid', {
 	center: [15.35, 105.083],
 	zoom: 6.25,
 	layers: [light]
 });
 
-// Create a base layer that holds both maps.
+// Creating base layer that holds both maps.
 let baseMaps = {
   "Light": light,
   "Dark": dark
 };
 
-// Then we add a control to the map that will allow the user to change which
-// layers are visible.
+// Then we add a control to the map that will allow the user to change which layers are visible.
 L.control.layers(baseMaps, overlays).addTo(map);
 
 // Retrieve the location GeoJSON data.
 d3.json("Visualizations/Data/map2.geojson").then(function(data) {
 
-  // lculate the color and radius (I was to delete the radius one).
-  function styleInfo(feature) {
-    return {
-      //opacity: 1,
-      //fillOpacity: 1,
-      //fillColor: getColor(feature.properties.Pilot_Status),
-      //color: "#000000",
-      //radius: getRadius(feature.properties.Pilot),
-      //stroke: true,
-      //weight: 0.5
-    };
-  }
-
-  // Creating custom icons for the markers (would all be the default blue, large size without this).
+    // Creating custom icons for the markers (would all be the default blue, large size without this).
   var kiaMarker = new L.Icon({
 	iconUrl: "https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-red.png",
 	iconSize: [10, 15]
@@ -343,12 +328,12 @@ d3.json("Visualizations/Data/map2.geojson").then(function(data) {
  seventyThree.addTo(map);
 
 
-  // Create a legend control object.
+  // Creating a legend control object.
   let legend = L.control({
   position: "bottomright"
   })
 
-  // Then add all the details for the legend
+  // Then adding all the details for the legend
   legend.onAdd = function() {
   let div = L.DomUtil.create("div", "info legend");
     labels = [];
@@ -361,7 +346,7 @@ d3.json("Visualizations/Data/map2.geojson").then(function(data) {
     "#0000FF"
   ];
 
-  // Generate a label with a colored square for each status.
+  // Generating a label with a colored square for each status.
   for (var i = 0; i < statuses.length; i++) {
     console.log(colors[i]);
     div.innerHTML +=
@@ -373,8 +358,7 @@ d3.json("Visualizations/Data/map2.geojson").then(function(data) {
   // Adding legend to the map.
   legend.addTo(map);
  
-  
-    // Create textbox for map title
+  // Creating textbox for map title
   L.Control.textbox = L.Control.extend({
     onAdd: function() {
 
