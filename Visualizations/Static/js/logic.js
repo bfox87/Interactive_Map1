@@ -63,7 +63,7 @@ let baseMaps = {
 L.control.layers(baseMaps, overlays).addTo(map);
 
 // Retrieve the location GeoJSON data.
-d3.json("Visualizations/Data/map.geojson").then(function(data) {
+d3.json("Visualizations/Data/map2.geojson").then(function(data) {
 
   // lculate the color and radius (I was to delete the radius one).
   function styleInfo(feature) {
@@ -374,7 +374,7 @@ d3.json("Visualizations/Data/map.geojson").then(function(data) {
   legend.addTo(map);
  
   
-  // Create textbox for map title
+    // Create textbox for map title
   L.Control.textbox = L.Control.extend({
     onAdd: function() {
 
@@ -387,6 +387,6 @@ d3.json("Visualizations/Data/map.geojson").then(function(data) {
   // Will not work without this next line of code
   L.control.textbox = function(opts) { return new L.Control.textbox(opts)};
   // Adding textbox to map
-  L.control.textbox({ position: 'topleft' }).addTo(map);
+  L.control.textbox({ position: 'bottomright' }).addTo(map);
 
 });
